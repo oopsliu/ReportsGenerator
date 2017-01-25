@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>会议记录</title>
+
+    <meta name="description" content="Automate reports generation.">
+    <meta name="author" content="LIUZheng 刘峥">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  </head>
+  
+  <body> 
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12">
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>
+				会议时间
+			</h2>	
+			<div name="meetingtime" class="form-group"> <textarea class="form-control" placeholder="会议时间" ></textarea> </div>
+			<h2>
+				主要内容
+			</h2>
+			<div name="content" class="form-group"> <textarea class="form-control" placeholder="主要内容" rows=10></textarea> </div>
+
+			<h2>
+				下一步工作计划
+			</h2>
+			<div name="plan" class="form-group"> <textarea class="form-control" placeholder="下一步工作计划" rows=10></textarea> </div><br>
+
+		</div>
+	</div>
+</div>			
+				
+				<div class="container">
+    			<button name="prev" type="button" class="btn btn-default">
+    				Prev
+    			</button> 
+    			<button name="submit" type="button-submit" class="btn btn-primary">
+    				Submit
+    			</button>
+				</div>
+				
+    		</div>
+    	</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+  </body>
+</html>

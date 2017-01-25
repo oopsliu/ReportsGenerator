@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>选择报告类型</title>
+
+    <meta name="description" content="Automate reports generation.">
+    <meta name="author" content="LIUZheng 刘峥">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+  
+  
+<form action="{{ url_for('click') }}" method="POST">    
+    <div class="half">
+        <input type="radio" name="option" value="meeting" />           
+    </div>
+    <div class="half">
+        <input type="radio" name="option" value="onsite" />           
+    </div>
+        <input type="submit" value="Submit">
+</form>
+
+
+				
+				<div class="container">
+    			<button name="prev" type="button" class="btn btn-default">
+    				Prev
+    			</button> 
+    			<button name="next" type="button" class="btn btn-primary">
+    				Next
+    			</button>
+				</div>
+				</form>				
+    		</div>
+    	</div>
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

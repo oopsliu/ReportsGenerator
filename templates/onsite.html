@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>现场技术支持</title>
+
+    <meta name="description" content="Automate reports generation.">
+    <meta name="author" content="LIUZheng 刘峥">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	
+  </head>
+  
+  <body> 
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12">
+			<h2>
+				服务类型
+			</h2>	
+                <div class="btn-group btn-group-justified" data-toggle="buttons">
+                  <label class="btn btn-default active">
+                    <input type="radio" name="options" id="training" autocomplete="off" checked=""> 技术培训
+                  </label>
+				  <label class="btn btn-default">
+                    <input type="radio" name="options" id="salon" autocomplete="off"> 技术沙龙
+                  </label>
+				  <label class="btn btn-default">
+                    <input type="radio" name="options" id="onsite" autocomplete="off"> 现场技术支持
+                  </label>
+				</div>
+			</div>	
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>
+				执行时间
+			</h2>	
+			<div name="onsitetime" class="form-group"> <textarea class="form-control" placeholder="执行时间" ></textarea> </div>
+			
+			<h2>
+				主题
+			</h2>	
+			<div name="title" class="form-group"> <textarea class="form-control" placeholder="主题" ></textarea> </div>
+			
+			<h2>
+				技术专家
+			</h2>	
+			<div name="expert" class="form-group"> <textarea class="form-control" placeholder="技术专家" ></textarea> </div>
+			
+			<h2>
+				主要内容
+			</h2>
+			
+			<div name="content" class="form-group"> <textarea class="form-control" placeholder="主要内容" rows=10></textarea> </div>
+
+			<h2>
+				总结
+			</h2>
+			<div name="summary" class="form-group"> <textarea class="form-control" placeholder="总结" rows=10></textarea> </div><br>
+
+		</div>
+	</div>
+</div>			
+				
+				<div class="container">
+    			<button name="prev" type="button" class="btn btn-default">
+    				Prev
+    			</button> 
+    			<button name="submit" type="button-submit" class="btn btn-primary">
+    				Submit
+    			</button>
+				</div>
+				
+    		</div>
+    	</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+  </body>
+</html>

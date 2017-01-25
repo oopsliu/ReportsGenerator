@@ -3,9 +3,33 @@ from docxtpl import DocxTemplate
 import os
 
 
-template_dir =  os.path.dirname(__file__)
-print (template_dir)
+template_dir =  os.path.dirname(os.path.dirname(__file__))
+
 template_dir = os.path.join(template_dir, '..','templates')
+print (template_dir)
+
+
+app = Flask(__name__, template_folder=template_dir)
+
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        selectedValue = request.form['option']
+        return redirect(url_for('click', selectedValue=selectedValue))
+    return render_template('test.html')
+
+
+@app.route('/<selectedValue>')
+def click(selectedValue):
+    print (selectedValue)
+    return render_template(selectedValue + '.html')
+
+
+if __name__ == '__main__':
+    app.run(host='localhost', port=5000, debug=True)
+
+
 
 # app = Flask(__name__,template_folder=template_dir)
 

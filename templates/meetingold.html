@@ -17,26 +17,26 @@
     <div class="container">
     	<div class="row">
     		<div class="col-md-12">
-			<form name='meetingForm' action="{{ url_for('gotoMeeting') }}" id="textform" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">	
+<form name='meetingForm' id="textform" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">	
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<h2>
 								会议时间
 							</h2>	
-							<div class="form-group"> 
-							<textarea name="meetingtime" class="form-control" placeholder="会议时间" ></textarea> </div>
+							<div name="meetingtime" class="form-group"> 
+							<textarea name="text" class="form-control" placeholder="会议时间" ></textarea> </div>
 							<h2>
 								主要内容
 							</h2>
-							<div  class="form-group"> 
-							<textarea name="content" class="form-control" placeholder="主要内容" rows=10></textarea> </div>
+							<div name="content" class="form-group"> 
+							<textarea name="text" class="form-control" placeholder="主要内容" rows=10></textarea> </div>
 
 							<h2>
 								下一步工作计划
 							</h2>
-							<div  class="form-group"> 
-							<textarea name="plan" class="form-control" placeholder="下一步工作计划" rows=10></textarea> </div><br>
+							<div name="plan" class="form-group"> 
+							<textarea name="text" class="form-control" placeholder="下一步工作计划" rows=10></textarea> </div><br>
 
 						</div>
 					</div>
@@ -51,7 +51,7 @@
     			</button>
 				</div>
 
-			</form>				
+</form>				
     		</div>
     	</div>
     </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>会议记录</title>
+    <title>已生成报告</title>
 
     <meta name="description" content="Automate reports generation.">
     <meta name="author" content="LIUZheng 刘峥">
@@ -17,26 +17,15 @@
     <div class="container">
     	<div class="row">
     		<div class="col-md-12">
-			<form name='meetingForm' action="{{ url_for('gotoMeeting') }}" id="textform" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">	
+			<form name='meetingForm' action="{{ url_for('openDoc') }}" id="textform" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">	
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<h2>
-								会议时间
+								报告已保存至：
 							</h2>	
 							<div class="form-group"> 
-							<textarea name="meetingtime" class="form-control" placeholder="会议时间" ></textarea> </div>
-							<h2>
-								主要内容
-							</h2>
-							<div  class="form-group"> 
-							<textarea name="content" class="form-control" placeholder="主要内容" rows=10></textarea> </div>
-
-							<h2>
-								下一步工作计划
-							</h2>
-							<div  class="form-group"> 
-							<textarea name="plan" class="form-control" placeholder="下一步工作计划" rows=10></textarea> </div><br>
+							<p name="output"> {{outputFileName}}</p> </div>
 
 						</div>
 					</div>

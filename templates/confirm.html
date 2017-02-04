@@ -13,11 +13,11 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
   </head>
   
-  <body> 
+  <body>
     <div class="container">
     	<div class="row">
     		<div class="col-md-12">
-			<form name='meetingForm' action="{{ url_for('openDoc') }}" id="textform" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">	
+			<form name='meetingForm' action="{{ url_for('home') }}" id="textform" method="GET" enctype="multipart/form-data" accept-charset="UTF-8">	
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -25,18 +25,23 @@
 								报告已保存至：
 							</h2>	
 							<div class="form-group"> 
-							<p name="output"> {{outputFileName}}</p> </div>
-
+							  {% with messages = get_flashed_messages() %}
+							  {% if messages %}
+								<ul class=flashes>
+								{% for message in messages %}
+								  <li>{{ message }}</li>
+								{% endfor %}
+								</ul>
+							  {% endif %}
+							{% endwith %}
+							</div>
 						</div>
 					</div>
 				</div>			
 				
 				<div class="container">
-    			<button name="prev" type="button" class="btn btn-default">
-    				Prev
-    			</button> 
     			<button name="submit" type="submit" value="Submit" class="btn btn-primary">
-    				Submit
+    				Back to Home
     			</button>
 				</div>
 

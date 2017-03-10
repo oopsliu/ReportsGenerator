@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>季度巡检报告</title>
+
+    <meta name="description" content="Automate reports generation.">
+    <meta name="author" content="LIUZheng 刘峥">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  </head>
+  
+  <body> 
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12">
+			<form name='patrolseaForm' action="{{ url_for('gotoPatrolSeasonal') }}" id="textform" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">	
+				<div class="container">
+					<div class="row">
+					
+						<div class="col-md-12">
+							<h2>
+								图形服务器
+							</h2>	
+							<table class="table table-default">
+								<thead>
+									<tr>
+										<th>
+											#
+										</th>
+										<th>
+											CPU(1st)
+										</th>
+										<th>
+											内存(1st)
+										</th>
+										<th>
+											CPU(2nd)
+										</th>
+										<th>
+											内存(2nd)
+										</th>
+										<th>
+											CPU(3rd)
+										</th>		
+										<th>
+											内存(3rd)
+										</th>											
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											31
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+									</tr>
+									<tr class="active">
+										<td>
+											32
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+									</tr>
+									<tr >
+										<td>
+											35
+										</td>
+											<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+									</tr>
+									<tr class="active">
+										<td>
+											36
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+									</tr>
+									<tr >
+										<td>
+											113
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+									</tr>
+									<tr class='active'>
+										<td>
+											114
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+										<td>
+											<input type="text" name="row-1-age" size="4">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						
+							
+							
+							
+							
+							<h2>
+								会议时间 (格式: YYYYMMDD, Weekdays, Hours)
+							</h2>	
+						</div>								
+						</div>
+					</div>
+				</div>			
+				
+				<div class="container">
+    			<button onclick="javascript:history.back()" name="prev" type="button" class="btn btn-default">
+    				Prev
+    			</button> 
+    			<button name="submit" type="submit" value="Submit" class="btn btn-primary">
+    				Submit
+    			</button>
+				</div>
+
+			</form>				
+    		</div>
+    	</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+  </body>
+</html>

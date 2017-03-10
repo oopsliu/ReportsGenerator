@@ -33,6 +33,10 @@ def home():
 			return redirect(url_for('gotoOnsite'))
 		elif selectedValue == 'meeting':
 			return redirect(url_for('gotoMeeting'))
+		elif selectedValue == 'patrol':
+			return redirect(url_for('gotoPatrol'))
+		elif selectedValue == 'patrolsea':
+			return redirect(url_for('gotoPatrolSeasonal'))
 	return render_template('index.html')
 	
 # onsite page
@@ -58,6 +62,7 @@ def gotoOnsite():
 		context = {
 			'type': type,
 			'onsitetime': onsitetime,
+			'title': title,
 			'expert': expert,
 			'content': content,
 			'summary': summary,
@@ -110,65 +115,170 @@ def gotoMeeting():
 		return redirect(url_for('showConfirm'))
 		
 	return render_template('meeting.html')
+	
+	
+	
+	
+# patrol seasonal page
+@app.route('/patrolseasonal', methods=['GET','POST'])
+def gotoPatrolSeasonal():
+	if request.method == 'POST':
+		meetingtime = request.form['meetingtime']
+		content = request.form['content']
+		plan = request.form['plan']
+		
+		inputTmpl = docxtmp_dir + '\patrolseasonal\patrolseasonal.docx'
+		tpl = DocxTemplate(inputTmpl)
+		context = {
+			'meetingtime': meetingtime,
+			'content': content,
+			'plan': plan,
+			
+			'prj': prj,
+			'userOrgShr': userOrgShr,
+			'userAddr': userAddr,
+			'userCont': userCont,
+			'userPhone': userPhone,
+			'esriCont': esriCont
+		}
+		tpl.render(context)
+		date = re.split(',|，',meetingtime)[0]
+		outputFile = docxout_dir + '\patrolseasonal' + '\\' +  userOrgShr + '_' + date + '_' + '会议纪要.docx'
+		tpl.save(outputFile)
+		
+		flash(os.path.abspath(outputFile))
+		return redirect(url_for('showConfirm'))
+		
+	return render_template('patrolseasonal.html')	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+# patrol page
+@app.route('/patrol', methods=['GET','POST'])
+def gotoPatrol():
+	if request.method == 'POST':
+		y_init = request.form['y_init']
+		y_base = request.form['y_base']
+		y_buss = request.form['y_buss']		
+		y_spaq = request.form['y_spaq']
+		y_attq = request.form['y_attq']
+		y_spaa = request.form['y_spaa']
+		y_expm = request.form['y_expm']
+		y_iden = request.form['y_iden']
+		y_quer = request.form['y_quer']
+		y_geos = request.form['y_geos']	
+		
+		z_init = request.form['z_init']
+		z_base = request.form['z_base']
+		z_buss = request.form['z_buss']		
+		z_spaq = request.form['z_spaq']
+		z_attq = request.form['z_attq']
+		z_spaa = request.form['z_spaa']
+		z_expm = request.form['z_expm']
+		z_iden = request.form['z_iden']
+		z_quer = request.form['z_quer']
+		z_geos = request.form['z_geos']			
+
+		x_init = request.form['x_init']
+		x_base = request.form['x_base']
+		x_buss = request.form['x_buss']		
+		x_spaq = request.form['x_spaq']
+		x_attq = request.form['x_attq']
+		x_spaa = request.form['x_spaa']
+		x_expm = request.form['x_expm']
+		x_iden = request.form['x_iden']
+		x_quer = request.form['x_quer']
+		x_geos = request.form['x_geos']		
+		
+		mxdren = request.form['mxdren']
+		mxdque = request.form['mxdque']	
+		
+		patroldate = request.form['patroldate']
+		patrolcomm = request.form['patrolcomm']
+		patrolsumm = request.form['patrolsumm']		
+		
+		inputTmpl = docxtmp_dir + '\patrol\patrol.docx'
+		tpl = DocxTemplate(inputTmpl)
+		context = {
+			'y_init': y_init,
+			'y_base': y_base,
+			'y_buss': y_buss,
+			'y_spaq': y_spaq,
+			'y_attq': y_attq,
+			'y_spaa': y_spaa,
+			'y_expm': y_expm,
+			'y_iden': y_iden,
+			'y_quer': y_quer,
+			'y_geos': y_geos,
+			
+			'z_init': z_init,
+			'z_base': z_base,
+			'z_buss': z_buss,
+			'z_spaq': z_spaq,
+			'z_attq': z_attq,
+			'z_spaa': z_spaa,
+			'z_expm': z_expm,
+			'z_iden': z_iden,
+			'z_quer': z_quer,
+			'z_geos': z_geos,		
+
+			'x_init': x_init,
+			'x_base': x_base,
+			'x_buss': x_buss,
+			'x_spaq': x_spaq,
+			'x_attq': x_attq,
+			'x_spaa': x_spaa,
+			'x_expm': x_expm,
+			'x_iden': x_iden,
+			'x_quer': x_quer,
+			'x_geos': x_geos,		
+
+			'mxdren': mxdren,
+			'mxdque': mxdque,
+			
+			'patroldate': patroldate,
+			'patrolcomm': patrolcomm,
+			'patrolsumm': patrolsumm,
+			
+			'prj': prj,
+			'userOrgShr': userOrgShr,
+			'userAddr': userAddr,
+			'userCont': userCont,
+			'userPhone': userPhone,
+			'esriCont': esriCont
+		}
+		tpl.render(context)
+		date = re.split(',|，',patroldate)[0]
+		outputFile = docxout_dir + '\patrol' + '\\' +  userOrgShr + '_' + date + '_' + '日常巡检服务记录表.docx'
+		tpl.save(outputFile)
+		
+		flash(os.path.abspath(outputFile))
+		return redirect(url_for('showConfirm'))
+		
+	return render_template('patrol.html')
 
 # confirmation page
 @app.route('/confirm')
 def showConfirm():
    return render_template('confirm.html')
 
-
-
-
-
-
-
-	
-
-
-
-
 if __name__ == '__main__':
 	app.run(host='localhost', port=5000, debug=True)
-	
-# @app.route('/signup', methods=['POST'])
-# def signup():
-	# session['username'] = request.form['username']
-	# session['message'] = request.form['message']
-	# tpl = DocxTemplate(r"E:\Projects\2017.1.20_generateReports\test\tmp.docx")
-	# context = {
-		# 'tbl_contents': [
-			# {'label': '人员', 'cols': [request.form['message']]},
-			# {'label': '时间', 'cols': [request.form['message']]},
-			# {'label': '内容', 'cols': [request.form['message']]},
-			# ]
-	# }
-	# tpl.render(context)
-	# tpl.save(r"E:\Projects\2017.1.20_generateReports\test\out.docx")
-	# return redirect(url_for('message'))
-
-# @app.route('/message')
-# def message():
-
-	# return render_template('message.html', message=session['message'])
-	
-	
-# @app.route('/')
-# def home():
-	# return render_template('index.html')
-	
-# @app.route('/category', methods=['GET','POST'])
-# def click():
-	# global selectedValue
-	# selectedValue = request.form['options']
-	# return redirect(url_for('renderingPage'))
-	
-# @app.route('/content')
-# def renderingPage():
-	# return render_template(selectedValue + '.html')
-	
-# @app.route('/')
-# def openDoc():
-	# docx = r"E:\Projects\2017.1.20_generateReports\ReportsGenerator\docx\docxtmpl\meeting\out.docx"
-	# wordPath = r'E:\Software\MicrosoftOffice\Office15\WINWORD.EXE'
-	# subprocess.Popen("%s %s" % (wordPath, docx))
-	# return render_template('index.html')		

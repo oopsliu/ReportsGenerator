@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>日常巡检</title>
+
+    <meta name="description" content="Automate reports generation.">
+    <meta name="author" content="LIUZheng 刘峥">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  </head>
+  
+  <body> 
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-12">
+			<form name='patrolForm' action="{{ url_for('gotoPatrol') }}" id="textform" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">	
+				<div class="container">			
+						<div class="form-group"> 
+							<h2>
+								一张图
+							</h2>								
+								<div class="row">
+								<div class="col-md-2"><label>初始加载</label><textarea name="y_init" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>底图加载</label><textarea name="y_base" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>业务图层加载</label><textarea name="y_buss" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>空间查询</label><textarea name="y_spaq" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>属性查询</label><textarea name="y_attq" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>空间分析</label><textarea name="y_spaa" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								</div>
+								
+								<div class="row">
+								<div class="col-md-2"><label>ExportMap</label><textarea name="y_expm" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>Identify</label><textarea name="y_iden" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>Query</label><textarea name="y_quer" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>GeometryService</label><textarea name="y_geos" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								</div><br>
+							
+							<h2>
+								综合分析
+							</h2>
+								<div class="row">
+								<div class="col-md-2"><label>初始加载</label><textarea name="z_init" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>底图加载</label><textarea name="z_base" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>业务图层加载</label><textarea name="z_buss" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>空间查询</label><textarea name="z_spaq" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>属性查询</label><textarea name="z_attq" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>空间分析</label><textarea name="z_spaa" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								</div>
+								
+								<div class="row">
+								<div class="col-md-2"><label>ExportMap</label><textarea name="z_expm" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>Identify</label><textarea name="z_iden" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>Query</label><textarea name="z_quer" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>GeometryService</label><textarea name="z_geos" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								</div><br>
+
+							<h2>
+								行政审批
+							</h2>
+								<div class="row">
+								<div class="col-md-2"><label>初始加载</label><textarea name="x_init" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>底图加载</label><textarea name="x_base" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>业务图层加载</label><textarea name="x_buss" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>空间查询</label><textarea name="x_spaq" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>属性查询</label><textarea name="x_attq" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>空间分析</label><textarea name="x_spaa" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								</div>
+								
+								<div class="row">
+								<div class="col-md-2"><label>ExportMap</label><textarea name="x_expm" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>Identify</label><textarea name="x_iden" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>Query</label><textarea name="x_quer" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>GeometryService</label><textarea name="x_geos" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								</div><br>
+								
+								<h2>
+									地图文档
+								</h2>
+								<div class="row">
+								<div class="col-md-2"><label>渲染</label><textarea name="mxdren" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								<div class="col-md-2"><label>查询</label><textarea name="mxdque" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								</div><br>
+								
+								<h2>
+									巡检日期 (格式:YYYYMMDD)
+								</h2>
+								<div class="row">
+								<div class="col-md-2"><textarea name="patroldate" class="form-control" placeholder="" rows=1></textarea>
+								</div>
+								</div><br>
+								
+								<h2>
+									问题与建议
+								</h2>
+								<div class="row">
+								<div class="form-group"><textarea name="patrolcomm" class="form-control" placeholder="" rows=3></textarea>
+								</div>
+								</div>
+
+								<h2>
+									总体巡检意见
+								</h2>
+								<div class="row">
+								<div class="form-group"><textarea name="patrolsumm" class="form-control" placeholder="" rows=3></textarea>
+								</div>
+								</div><br>							
+						</div>
+				</div>			
+				
+				<div class="container">
+    			<button onclick="javascript:history.back()" name="prev" type="button" class="btn btn-default">
+    				Prev
+    			</button> 
+    			<button name="submit" type="submit" value="Submit" class="btn btn-primary">
+    				Submit
+    			</button>
+				</div>
+
+			</form>				
+    		</div>
+    	</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+  </body>
+</html>

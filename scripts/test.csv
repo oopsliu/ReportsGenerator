@@ -1,0 +1,6 @@
+services/Hosted/mytest,2017-01-02 14:00
+RequestCount,
+RequestsFailed,
+RequestsTimedOut,
+RequestMaxResponseTime,
+RequestAvgResponseTime,

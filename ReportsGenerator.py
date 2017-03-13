@@ -3,6 +3,7 @@
 from flask import Flask, flash, render_template, request, redirect, url_for, abort, session
 from docxtpl import DocxTemplate
 import os,sys,subprocess,csv,codecs,re
+import RGplot
 
 # working directories
 current_dir =  os.path.dirname(__file__)

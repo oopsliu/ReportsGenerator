@@ -22,11 +22,11 @@
     				选择报告类型
     			</h1>
     			<p>
-    				-- 巡检：<br>
-					-- 季度巡检报告：<br>
-					-- 会议记录：<br>
-					-- 现场技术支持：<br>
-					-- 年度总结：<br>
+    				-- 巡检：日常巡检报告<br>
+					-- 巡检（季度）：季度巡检报告<br>
+					-- 会议记录：开会纪要<br>
+					-- 现场技术支持：包含技术培训、技术沙龙、现场技术支持三种类别<br>
+					-- 年度总结：暂不支持<br>
     			</p><br>
 				<form name='categoryForm' method="POST" accept-charset="UTF-8">				
 				
@@ -45,17 +45,13 @@
                     <input type="radio" name="options" value="onsite" autocomplete="off"> 现场技术支持
                   </label>
 				  <label class="btn btn-default">
-                    <input type="radio" name="options" value="annual" autocomplete="off"> 年度总结
+                    <input type="radio" name="options" value="annual" autocomplete="off"> <strike>年度总结</strike>
                   </label>
                 </div>
                 </div><br>		
-
 				
 				<div class="container">
-    			<button name="prev" type="button" class="btn btn-default">
-    				Prev
-    			</button> 
-    			<button name="next" type="submit" value="Submit" class="btn btn-primary">
+    			<button name="next" type="submit" value="Submit" class="btn btn-primary center-block">
     				Next
     			</button>
 				</div>

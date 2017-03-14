@@ -1,10 +1,11 @@
 示例：prj,项目名称,2015年信息化运行维护项目－ArcGIS原厂运维
-prj,项目名称,test项目名称
-userOrg,用户单位全称,test单位全称
-userOrgShr,用户单位简称,test单位简称
-userAddr,用户单位地址,test单位地址
-userCont,用户单位联系人,test联系人
-userPhone,用户单位联系方式,test电话
-esriAddr,esri地址,金泰大厦
-esriCont,esri项目负责人,刘峥
-esriPhone,esri联系方式,test57632288
+prj,项目名称,2016年北京市国土资源局信息化运行维护项目－ArcGIS 原厂运维
+userOrg,用户单位全称,北京市国土资源局
+userOrgShr,用户单位简称,北京市国土局
+userAddr,用户单位地址,北京市东城区和平里北街2号
+userCont,用户单位联系人,武瑞芳
+userCont2,用户单位联系人2,袁明明
+userPhone,用户单位联系方式,010-64409805
+esriAddr,esri地址,金泰大厦16层
+esriCont,esri项目负责人,勾戈雪黎
+esriPhone,esri联系方式,010-57632195
